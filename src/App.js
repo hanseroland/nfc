@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import { lightTheme, darkTheme } from './theme';
-import { BrowserRouter as Router, Route, Routes, } from 'react-router-dom'
+import { HashRouter as Router, Route, Routes, } from 'react-router-dom'
 import Header from './components/Layouts/Header';
 import LandingPage from './components/LandingPage';
 import ContactDetail from './components/ContactDetailPage/ContactDetail';

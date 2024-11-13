@@ -24,7 +24,7 @@ const BenefitsSection = () => {
         {/* Image Section */}
         <Grid size={{ xs:12, md: 6 }} >
          <motion.img
-            src="/images/Ndeye-OUMOU.png" // Remplacez par le chemin de l'image
+            src={`${process.env.PUBLIC_URL}/images/Ndeye-OUMOU.png`} // Remplacez par le chemin de l'image
             alt="Explore"
             style={{
               width: "90%",
@@ -46,11 +46,9 @@ const BenefitsSection = () => {
                 01
               </Typography>
               <Typography variant="h6" fontWeight="bold" mt={1}>
-                Le monde se rassemble avec Samsung Galaxy
+                lorem ipsum dolor nera du partie
               </Typography>
-              <Link href="#" underline="hover" sx={{ display: "block", mt: 1 }}>
-                En savoir plus
-              </Link>
+              
               <Divider sx={{ mt: 2 }} />
             </Box>
 
@@ -60,7 +58,7 @@ const BenefitsSection = () => {
                 02
               </Typography>
               <Typography variant="h6" fontWeight="bold" mt={1}>
-                Conseils pour faire face aux grands changements dans la vie
+              lorem ipsum dolor nera du partie
               </Typography>
               <Divider sx={{ mt: 2 }} />
             </Box>
@@ -71,7 +69,7 @@ const BenefitsSection = () => {
                 03
               </Typography>
               <Typography variant="h6" fontWeight="bold" mt={1}>
-                Découvrez G•NUSMAS, l'étrange extraterrestre
+              lorem ipsum dolor nera du partie
               </Typography>
               <Divider sx={{ mt: 2 }} />
             </Box>

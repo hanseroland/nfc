@@ -44,7 +44,7 @@ const HeroSection = () => {
       {/* Image incliné à droite */}
           <Box
             component={motion.img}
-            src="/images/inc.png" // Remplacez par le chemin de votre image
+            src={`${process.env.PUBLIC_URL}/images/inc.png`} // Remplacez par le chemin de votre image
             alt="Illustration"
             initial={{ x: -200,y:-300, rotate: 0, opacity: 0 }}
             animate={{ x: -180,y:-100, rotate: 0, opacity: 1 }}
@@ -60,7 +60,7 @@ const HeroSection = () => {
           />
           <Box
             component={motion.img}
-            src="/images/oumardiop.png" // Remplacez par le chemin de votre image
+            src={`${process.env.PUBLIC_URL}/images/oumardiop.png`} // Remplacez par le chemin de votre image
             alt="Illustration"
             initial={{ x: 200, rotate: 0, opacity: 0 }}
             animate={{ x: 170, rotate: 0, opacity: 1 }}
