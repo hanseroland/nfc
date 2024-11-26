@@ -5,17 +5,24 @@ import BenefitsSection from './BenefitsSection';
 import Testimonials from './Testimonials';
 import ContactSection from './ContactSection';
 import HeroTest from './HeroTest';
+import ImageCarousel from './ImageCarousel';
+import HighlightSection from './HighlightSection';
+import AvantagesSection from './AvantagesSection';
+import PossibilitiesSection from './PossibilitiesSection';
 
 
 const LandingPage = () => {
   return (
-    <>
-      
+    <> 
       <HeroSection />
-      <FeaturesSection />
+      <HighlightSection/>
+      <ImageCarousel/>
+      <AvantagesSection/>
+      <PossibilitiesSection/>
+     {/* <FeaturesSection />
       <BenefitsSection />
       <Testimonials />
-      <ContactSection />
+      <ContactSection />*/}
     </>
   );
 };
