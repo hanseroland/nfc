@@ -3,7 +3,7 @@ import { Box, Typography, List, ListItem, ListItemText, ListItemIcon } from "@mu
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Grid from '@mui/material/Grid2';
 
-const AvantagesSection = () => {
+const AvantagesSection = ({mode}) => {
   const avantages = [
     { label: "Partage Sans Contact", color: "#FFD700" },
     { label: "Design Personnalisé", color: "#FF5722" },
@@ -20,8 +20,9 @@ const AvantagesSection = () => {
         backgroundColor: "background.default", // Couleur dynamique selon le thème
         padding: "40px",
         position: "relative",
-        height: "100vh",
+        
       }}
+      
     >
       <Grid
         container
@@ -29,15 +30,31 @@ const AvantagesSection = () => {
         alignItems="center"
         justifyContent="space-between"
         sx={{
-          maxWidth: "1200px",
+          
           margin: "0 auto",
           backgroundColor: "#333333", // Couleur grise foncée comme dans l'image
-          borderRadius: "24px",
           padding: "40px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
           height: "100%",
         }}
       >
+        <Grid size={{xs:12}}>
+         <Box>
+            <Typography
+              variant="h6"
+              sx={{
+                color: "primary.main",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                marginBottom: "20px",
+              }}
+            >
+              Avantages
+            </Typography>
+          
+          </Box>
+        </Grid>
+      
         {/* Texte principal */}
         <Grid size={{xs:12,md:6}}>
           <Typography
@@ -46,6 +63,8 @@ const AvantagesSection = () => {
               fontWeight: "bold",
               color: "text.primary",
               marginBottom: "20px",
+              color: mode === "light" ? "#fff" : "#fff",
+              textAlign:{xs:'center',md:'left'}
             }}
           >
             Boostez votre business avec votre carte de visite multifonction
@@ -53,12 +72,14 @@ const AvantagesSection = () => {
         </Grid>
 
         {/* Liste des avantages */}
-        <Grid size={{xs:12,md:6}}>
+        <Grid size={{xs:12,md:4}}>
           <Box
             sx={{
               border: "1px solid #FFD700", // Bordure dorée
               borderRadius: "12px",
               padding: "20px",
+              borderImage:"linear-gradient(to right, #FF5722, #FFD700)",
+              borderImageSlice: "1", 
             }}
           >
             <List>
@@ -70,6 +91,7 @@ const AvantagesSection = () => {
                     alignItems: "center",
                     justifyContent: "space-between",
                     padding: "10px 0",
+                    
                   }}
                 >
                   <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -84,7 +106,6 @@ const AvantagesSection = () => {
                         sx={{
                           width: "12px",
                           height: "12px",
-                          borderRadius: "50%",
                           backgroundColor: item.color,
                         }}
                       />
@@ -94,7 +115,7 @@ const AvantagesSection = () => {
                       primary={item.label}
                       primaryTypographyProps={{
                         variant: "body1",
-                        color: "text.primary",
+                        color: mode === "light" ? "#fff" : "#fff",
                         fontWeight: "bold",
                       }}
                     />
@@ -102,7 +123,7 @@ const AvantagesSection = () => {
                   {/* Flèche */}
                   <ArrowForwardIosIcon
                     sx={{
-                      color: "text.primary",
+                      color: mode === "light" ? "#fff" : "#fff",
                       fontSize: "14px",
                     }}
                   />

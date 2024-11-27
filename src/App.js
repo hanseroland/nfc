@@ -32,7 +32,7 @@ function App() {
         {/*<Header onToggleTheme={() => setDarkMode(!darkMode)} />*/}
          <Navbar  mode={mode} toggleTheme={toggleTheme}  />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<LandingPage mode={mode} />} />
           <Route path="/contact-detail/:id" element={<ContactDetail />} />
         </Routes>
         <Footer />

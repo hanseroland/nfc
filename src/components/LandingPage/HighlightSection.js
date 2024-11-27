@@ -8,7 +8,6 @@ const HighlightSection = () => {
     <Box
       component="section"
       sx={{
-        height: "100vh",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -23,7 +22,7 @@ const HighlightSection = () => {
         alignItems="center"
         justifyContent="space-between"
         sx={{
-          maxWidth: "1200px",
+          
           margin: "0 auto",
         }}
       >
@@ -110,7 +109,7 @@ const HighlightSection = () => {
           borderRadius: "100px",
           padding: "50px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-          height: "450px", // Hauteur de la boîte grise
+          height: {xs:"300px",md:"450px"}, // Hauteur de la boîte grise
         }}
       >
       </Box>
@@ -127,6 +126,7 @@ const HighlightSection = () => {
           width: "120%", // Taille plus grande que la boîte
           maxWidth: "400px", // Taille maximale de l'image
           height: "auto", // Maintient les proportions de l'image
+          
         }}
       />
 

@@ -6,7 +6,7 @@ import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import DurabilityCard from "../Cards/DurabilityCard";
 
-const PossibilitiesSection = () => {
+const PossibilitiesSection = ({mode}) => {
   const features = [
     {
       title: "Durabilité",
@@ -39,6 +39,7 @@ const PossibilitiesSection = () => {
         textAlign: "center",
       }}
     >
+       
       {/* Texte principal */}
       <Typography
         variant="h3"
@@ -49,8 +50,17 @@ const PossibilitiesSection = () => {
         }}
       >
         Une{" "}
-        <span style={{ color: "#FF5722" }}>carte,</span> des possibilités
-        infinies
+        <span style={{ color: "#FF5722" }}>carte,</span> 
+      </Typography>
+      <Typography
+        variant="h3"
+        sx={{
+          fontWeight: "bold",
+          color: "text.primary",
+          marginBottom: "10px",
+        }}
+      >
+        des possibilités infinies
       </Typography>
       <Typography
         variant="body1"
@@ -73,7 +83,7 @@ const PossibilitiesSection = () => {
       >
         {features.map((feature, index) => (
           <Grid size={{xs:12,md:4}} key={index}>
-           <DurabilityCard/>
+           <DurabilityCard mode={mode} />
           </Grid>
         ))}
       </Grid>

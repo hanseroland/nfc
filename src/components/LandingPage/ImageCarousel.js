@@ -47,7 +47,7 @@ const ImageCarousel = () => {
       component="section"
       sx={{
         position: "relative", // Pour que le contenu en absolute fonctionne
-        height: "100vh",
+      
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -56,7 +56,6 @@ const ImageCarousel = () => {
         backgroundPosition: "center",
         padding: "20px",
         overflow: "hidden", // Empêche tout débordement
-        borderRadius:'80px'
       }}
     >
       {/* Effet de blur */}

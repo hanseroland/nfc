@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Typography } from "@mui/material";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle"; // Icône personnalisable
 
-const DurabilityCard = () => {
+const DurabilityCard = ({mode}) => {
   return (
     <Box
       sx={{
@@ -10,6 +10,7 @@ const DurabilityCard = () => {
         alignItems: "center",
         backgroundColor: "transparent", // Fond noir par défaut
         padding: "20px",
+        
       }}
     >
       {/* Icône avec contour stylisé */}
@@ -19,11 +20,13 @@ const DurabilityCard = () => {
           justifyContent: "center",
           alignItems: "center",
           border: "1px solid", // Contour de l'icône
-          borderColor: "#FFD700", // Couleur dorée
-          borderRadius: "8px",
-          width: "60px",
+          borderRadius: "12px",
+          width: "150px",
           height: "60px",
           marginRight: "20px",
+          backgroundColor: mode === "light" ? "#fff" : "#000", // Fond central pour masquer la bordure
+          borderImage:"linear-gradient(to right, #FF5722, #FFD700)",
+          borderImageSlice: "1", 
         }}
       >
         <BuildCircleIcon sx={{ color: "#FF5722", fontSize: "40px" }} />
