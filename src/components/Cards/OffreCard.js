@@ -9,7 +9,7 @@ const OffreCard = ({ id, title, description, mode }) => {
                 color: "white",
                 padding: "20px",
                 borderRadius: "10px",
-                width: "300px",
+                width: "100%",
                 position: "relative",
                 fontFamily: "'Roboto', sans-serif",
             }}

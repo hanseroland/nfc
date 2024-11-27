@@ -47,6 +47,7 @@ const PossibilitiesSection = ({mode}) => {
           fontWeight: "bold",
           color: "text.primary",
           marginBottom: "10px",
+          fontSize:{md:'45px',xs:'35px'} ,
         }}
       >
         Une{" "}
@@ -58,6 +59,7 @@ const PossibilitiesSection = ({mode}) => {
           fontWeight: "bold",
           color: "text.primary",
           marginBottom: "10px",
+          fontSize:{md:'45px',xs:'35px'} ,
         }}
       >
         des possibilités infinies

@@ -51,7 +51,8 @@ const WhyChooseUs = ({mode}) => {
           sx={{
             fontWeight: "bold",
             marginBottom: "20px",
-
+            fontSize:{md:'45px',xs:'35px'} ,
+            textAlign:{md:'left',xs:'center'}
           }}
         >
           Pourquoi choisir{" "}
@@ -62,11 +63,17 @@ const WhyChooseUs = ({mode}) => {
             fontWeight: "bold",
             marginBottom: "20px",
             color: mode === "light" ? "#000" : "#fff",
+            textAlign:{md:'left',xs:'center'}
           }}
         >
          <Typography
             component="span"
-            sx={{fontSize:"30px",  color: "#FF6B00", fontWeight: "bold" }}
+            sx={{
+              fontSize:"30px",  
+              color: "#FF6B00", 
+              fontWeight: "bold",
+              textAlign:{md:'left',xs:'center'}
+            }}
           >
             Blackidentity
           </Typography>{" "}
@@ -77,7 +84,8 @@ const WhyChooseUs = ({mode}) => {
           sx={{
             marginBottom: "20px",
             lineHeight: 1.8,
-            fontSize:"13px"
+            fontSize:"13px",
+            textAlign:{md:'left',xs:'justify'}
           }}
         >
           <strong>Moderne et sans contact :</strong> Partagez vos informations

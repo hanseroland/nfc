@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import HeroButton from "../buttons/HeroButton";
 import OffreCard from "../Cards/OffreCard";
@@ -18,9 +18,15 @@ const PricingOffers = ({mode}) => {
         backgroundColor: mode === "light" ? "#fff" : "#000",
         color:mode === "light" ? "#000" : "#fff",
          padding: "4rem 2rem", 
-         textAlign: "center" }}
+         textAlign: "center",
+         minHeight: "100vh", // S'assure que le conteneur prend toute la hauteur de l'écran
+        display: "flex", // Utilisation de flexbox pour centrer verticalement
+        flexDirection: "column",
+        justifyContent: "center", // Centre verticalement
+        
+        }}
     >
-      <Typography variant="h2" sx={{ marginBottom: "2rem", fontWeight: "bold" }}>
+      <Typography variant="h2" sx={{ marginBottom: "2rem", fontWeight: "bold", fontSize:{md:'45px',xs:'35px'} }}>
         Offres
       </Typography>
 
@@ -28,7 +34,16 @@ const PricingOffers = ({mode}) => {
         <HeroButton title="Particulier"/>
       </Box>
 
-      <Grid container spacing={4}>
+      <Grid 
+        container 
+        spacing={4}
+        sx={{
+          maxWidth: "1200px", // Largeur maximale pour limiter la taille sur les écrans larges
+          margin: "0 auto", // Centre horizontalement le bloc
+          justifyContent: "center", // Centre les colonnes dans le conteneur
+        }}
+        
+      >
 
         {offers.map((offer) => (
           <Grid key={offer.id} size={{xs:12,md:3,sm:6}}>

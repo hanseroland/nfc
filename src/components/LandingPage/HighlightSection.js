@@ -14,6 +14,7 @@ const HighlightSection = () => {
         backgroundColor: "background.default", // Adapté au thème
         padding: "40px",
         position: "relative",
+        minHeight: "100vh",
       }}
     >
       <Grid
@@ -46,6 +47,7 @@ const HighlightSection = () => {
                 fontWeight: "bold",
                 color: "text.primary",
                 marginBottom: "20px",
+                fontSize:{md:'45px',xs:'35px'}
               }}
             >
               Faites un premier{" "}
@@ -105,7 +107,7 @@ const HighlightSection = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundColor: "gray", // Couleur grise
+          backgroundColor: "rgb(69,69,82)", // Couleur grise
           borderRadius: "100px",
           padding: "50px",
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
@@ -120,10 +122,11 @@ const HighlightSection = () => {
         alt="Phone Mockup"
         sx={{
           position: "absolute", // Position absolue pour être en dehors de la boîte
-          top: "-100px", // Dépassement au-dessus de la boîte
+          top: {xs:'10px',md:'-100px'}, // Dépassement au-dessus de la boîte
           left: "50%", // Centrage horizontal
           transform: "translateX(-50%)", // Ajustement pour centrer
-          width: "120%", // Taille plus grande que la boîte
+          width:{xs:'200px',md:'400px'},
+          //width: "120%", // Taille plus grande que la boîte
           maxWidth: "400px", // Taille maximale de l'image
           height: "auto", // Maintient les proportions de l'image
           

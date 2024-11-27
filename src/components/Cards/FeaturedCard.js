@@ -21,7 +21,7 @@ const FeatureCard = ({ title, description, highlight, iconPath, reverse }) => {
             "&:hover": {
               transform: "translateY(-5px)",
             },
-            maxWidth: "500px", // Limite la largeur de chaque carte
+            maxWidth: "100%", // Limite la largeur de chaque carte
             bottom:'10px',
             
           }}

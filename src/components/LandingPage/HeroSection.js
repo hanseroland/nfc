@@ -9,7 +9,7 @@ const HeroSection = () => {
     <Box
       component="section"
       sx={{
-        height: "100vh",
+        minHeight: "100vh", 
         backgroundImage: `url('${process.env.PUBLIC_URL}/images/card-are-promin.webp')`, // Chemin relatif au dossier public
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -43,7 +43,9 @@ const HeroSection = () => {
           bottom: 0,
           left: 30,
           right: 30,
-          
+          maxWidth: "1200px", // Largeur maximale pour limiter la taille sur les écrans larges
+          margin: "0 auto", // Centre horizontalement le bloc
+          justifyContent: "center", // Centre les colonnes dans le conteneur
          
          
         }}

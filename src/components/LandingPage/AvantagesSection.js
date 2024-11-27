@@ -64,7 +64,8 @@ const AvantagesSection = ({mode}) => {
               color: "text.primary",
               marginBottom: "20px",
               color: mode === "light" ? "#fff" : "#fff",
-              textAlign:{xs:'center',md:'left'}
+              textAlign:{xs:'center',md:'left'},
+              fontSize:{md:'45px',xs:'35px'} ,
             }}
           >
             Boostez votre business avec votre carte de visite multifonction
