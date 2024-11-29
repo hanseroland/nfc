@@ -8,11 +8,11 @@ const FeatureCard = ({ title, description, highlight, iconPath, reverse }) => {
     <Paper
           elevation={reverse ? 0 : 3} // Supprime l'élévation si reverse est actif
           sx={{
-            padding: "20px",
+            padding: "10px",
             borderRadius: "16px",
             backgroundColor: reverse
               ? "transparent" // Pas de transparence si reverse
-              : "rgba(0, 0, 0, 0.1)", // Fond semi-transparent avec flou
+              : "rgba(0, 0, 0, 0.6)", // Fond semi-transparent avec flou
             backdropFilter: reverse ? "none" : "blur(10px)", // Blur uniquement si pas reverse
             border: reverse ? "none" : "1px solid", // Pas de bordure si reverse
             borderColor: reverse ? "transparent" : "primary.main", // Bordure dynamique
@@ -36,11 +36,12 @@ const FeatureCard = ({ title, description, highlight, iconPath, reverse }) => {
         <Grid size={{xs:12,md:6}}>
           <Box
             sx={{
-              height: "150px",
+              height: {xs: "150px",md: "150px",sm: "120px"},
               backgroundColor: "background.default",
               borderRadius: "12px",
               border: "1px solid",
               borderColor: "secondary.main",
+              display:{xs:'none',sm:'flex',md:'flex'}
             }}
           >
             {iconPath && (
@@ -65,7 +66,7 @@ const FeatureCard = ({ title, description, highlight, iconPath, reverse }) => {
             variant="h6"
             sx={{
               fontWeight: "bold",
-              color: "text.primary",
+              color: "#fff",
               marginBottom: "10px",
             }}
           >
@@ -87,7 +88,8 @@ const FeatureCard = ({ title, description, highlight, iconPath, reverse }) => {
           <Typography
             variant="body2"
             sx={{
-              color: "text.secondary",
+              color: "#aaa",
+              fontWeight:'bold'
             }}
           >
             {description}

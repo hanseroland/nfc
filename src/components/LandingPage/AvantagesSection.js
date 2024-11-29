@@ -2,8 +2,23 @@ import React from "react";
 import { Box, Typography, List, ListItem, ListItemText, ListItemIcon } from "@mui/material";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Grid from '@mui/material/Grid2';
+import { motion } from "framer-motion";
+
 
 const AvantagesSection = ({mode}) => {
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 100 }, // Commence en bas, invisible
+    visible: {
+      opacity: 1,
+      y: 0, // Se déplace vers le haut
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   const avantages = [
     { label: "Partage Sans Contact", color: "#FFD700" },
     { label: "Design Personnalisé", color: "#FF5722" },
@@ -12,7 +27,12 @@ const AvantagesSection = ({mode}) => {
 
   return (
     <Box
-      component="section"
+      component={motion.section}
+      id="avantages"
+      initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }} // Animation uniquement au premier scroll
+        variants={fadeUpVariant}
       sx={{
         display: "flex",
         justifyContent: "center",

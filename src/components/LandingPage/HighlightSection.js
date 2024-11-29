@@ -1,12 +1,27 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid2';
+import { motion } from "framer-motion";
 
 
 const HighlightSection = () => {
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 100 }, // Commence en bas, invisible
+    visible: {
+      opacity: 1,
+      y: 0, // Se déplace vers le haut
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
   return (
     <Box
-      component="section"
+      component="section" 
+        id="fonctionnalité"
       sx={{
         display: "flex",
         alignItems: "center",
@@ -102,6 +117,9 @@ const HighlightSection = () => {
       {/* Boîte grise */}
       <Box
         id="fond"
+        component={motion.div}
+        initial={{ backgroundColor: "rgb(0, 255, 0)", opacity: 0 }}
+        whileInView={{ backgroundColor: "#FF5722", opacity: 1 }}
         sx={{
           position: "relative",
           display: "flex",
@@ -117,13 +135,19 @@ const HighlightSection = () => {
       </Box>
       {/* Image au-dessus de la boîte */}
       <Box
-        component="img"
+        component={motion.img}
+       
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }} // Animation uniquement au premier scroll
+        variants={fadeUpVariant}
+      
         src={`${process.env.PUBLIC_URL}/images/oumardiop.png`} // Remplacez par le chemin réel de votre image
         alt="Phone Mockup"
         sx={{
           position: "absolute", // Position absolue pour être en dehors de la boîte
           top: {xs:'10px',md:'-100px'}, // Dépassement au-dessus de la boîte
-          left: "50%", // Centrage horizontal
+          left: "20%", // Centrage horizontal
           transform: "translateX(-50%)", // Ajustement pour centrer
           width:{xs:'200px',md:'400px'},
           //width: "120%", // Taille plus grande que la boîte

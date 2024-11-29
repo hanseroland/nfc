@@ -14,7 +14,9 @@ const offers = [
 
 const PricingOffers = ({mode}) => {
   return (
-    <Box sx={{ 
+    <Box 
+     id="offres"
+    sx={{ 
         backgroundColor: mode === "light" ? "#fff" : "#000",
         color:mode === "light" ? "#000" : "#fff",
          padding: "4rem 2rem", 

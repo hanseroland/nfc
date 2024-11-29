@@ -1,7 +1,20 @@
 import React from "react";
 import { Box, Typography, Button } from "@mui/material";
+import { motion } from "framer-motion";
 
 const WhyChooseUs = ({mode}) => {
+
+  const fadeUpVariant = {
+    hidden: { opacity: 0, y: 100 }, // Commence en bas, invisible
+    visible: {
+      opacity: 1,
+      y: 0, // Se déplace vers le haut
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
   return (
     <Box
       sx={{
@@ -27,7 +40,11 @@ const WhyChooseUs = ({mode}) => {
         }}
       >
         <Box
-          component="img"
+          component={motion.img}
+          initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }} // Animation uniquement au premier scroll
+        variants={fadeUpVariant}
           src={`${process.env.PUBLIC_URL}/images/pexels-tubarones-3754438.jpg`} // Remplacez par le chemin de l'image
           alt="Personne souriante"
           sx={{

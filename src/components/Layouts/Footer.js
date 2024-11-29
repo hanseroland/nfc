@@ -8,10 +8,11 @@ const Footer = () => {
       py={2} 
       textAlign="center"
       sx={{
-        backgroundColor:'#051937'
+        backgroundColor: "background.default",
+        boxShadow: "none",
       }}
       >
-      <Typography sx={{color:'white'}} variant="body2">© 2024 NFC Contact. Tous droits réservés. By HRP</Typography>
+      <Typography sx={{color:'text.primary'}} variant="body2">© 2024 NFC Contact. Tous droits réservés. By HRP</Typography>
     </Box>
   );
 };

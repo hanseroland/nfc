@@ -8,6 +8,7 @@ const HeroSection = () => {
   return (
     <Box
       component="section"
+      id="accueil"
       sx={{
         minHeight: "100vh", 
         backgroundImage: `url('${process.env.PUBLIC_URL}/images/card-are-promin.webp')`, // Chemin relatif au dossier public
@@ -24,10 +25,11 @@ const HeroSection = () => {
       <Typography
         variant="h3"
         sx={{
-          color: "text.primary",
+          color: "#fff",
           fontWeight: "bold",
           textAlign: "center",
           marginBottom: "30px",
+          fontSize:{xs:'30px',md:'40px'}
         }}
       >
         DakarIdentity la carte de visite numérique sans contact
@@ -51,14 +53,14 @@ const HeroSection = () => {
         }}
         
       >
-        <Grid size={{xs:12,md:6}} >
+        <Grid size={{xs:12,sm:6,md:6}} >
           <FeatureCard
             title="Une experience repensée pour une utilisation optimale"
             description="Simplifiez vos échanges professionnels avec BlackIdentity"
             iconPath={`${process.env.PUBLIC_URL}/images/card-are-promin.webp`} 
           />
         </Grid>
-        <Grid size={{xs:12,md:6}}>
+        <Grid size={{xs:12,sm:6,md:6}}>
           <FeatureCard
             title="Accès Universel"
             description="Compatible avec tous les smartphones dotés de NFC ou avec un QR code intégré"

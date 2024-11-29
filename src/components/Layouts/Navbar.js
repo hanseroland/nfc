@@ -44,23 +44,27 @@ const Navbar = ({ mode, toggleTheme }) => {
         }}
       >
         {/* Logo */}
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: "bold",
-            color: "primary.main",
+        <Link
+          to="accueil"
+          smooth
+          duration={500}
+          style={{
+            textDecoration: "none",
+            color: "#FF5722",
             cursor: "pointer",
+            fontWeight: "bold",
+            fontSize:'20px'
           }}
         >
           Dakar<span style={{ color: "secondary.main" }}>Identity</span>
-        </Typography>
+        </Link>
 
         {/* Menu Mobile */}
         <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
           <IconButton
             size="large"
             aria-label="menu"
-            color="inherit"
+            color="primary.main"
             onClick={handleOpenNavMenu}
           >
             <MenuIcon />
@@ -131,7 +135,7 @@ const Navbar = ({ mode, toggleTheme }) => {
               background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
               color: "#fff",
               fontWeight: "bold",
-              padding: "8px 16px",
+              padding: { xs: "4px 8px", md: "8px 16px", sm: "8px 16px" },
               borderRadius: "8px",
               textTransform: "none",
               "&:hover": {

@@ -1,8 +1,24 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import BuildCircleIcon from "@mui/icons-material/BuildCircle"; // Icône personnalisable
+import { motion } from "framer-motion";
 
 const DurabilityCard = ({mode}) => {
+
+   // Variants pour les animations
+   const iconVariant = {
+    bounce: {
+      y: [0, -10, 0], // Simule un rebond vertical
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut",
+        repeat: Infinity, // Rebond répétitif
+        repeatDelay: 1, // Pause avant le prochain rebond
+      },
+    },
+  };
+
+
   return (
     <Box
       sx={{
@@ -15,6 +31,11 @@ const DurabilityCard = ({mode}) => {
     >
       {/* Icône avec contour stylisé */}
       <Box
+       component={motion.div}
+       initial="hidden"
+       animate="visible"
+       whileHover="bounce" // Active l'effet de rebond au survol
+       variants={iconVariant}
         sx={{
           display: "flex",
           justifyContent: "center",
