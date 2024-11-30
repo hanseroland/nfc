@@ -17,58 +17,38 @@ const ContactSection = () => {
   return (
     <Box id="contact"
       sx={{
-        py: 8,
+        py: 8, 
         px: 4,
-        backgroundImage: 'linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)', // Dégradé bleu à violet
+        background: "backgroound.default", // Dégradé bleu à violet
         display: "flex",
         justifyContent: "center"
       }}
     >
       <Box
         component={motion.div}
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
         sx={{
-          display: "flex",
-          maxWidth: "900px",
+          display: "flex", // Utilisation de flexbox pour centrer verticalement
+          flexDirection: "column",
+          justifyContent: "center", // Centre verticalement
+          maxWidth: "800px",
           borderRadius: 4,
           overflow: "hidden",
-          boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
-          //backgroundImage: 'linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)', // Dégradé bleu à violet
-
         }}
       >
+       
+       <Typography variant="h2" 
+        sx={{ 
+          marginBottom: "2rem", 
+          fontWeight: "bold", 
+          fontSize:{md:'45px',xs:'35px'},
+          textAlign:'center'
+         }}
+        >
+        Formulaire de Contact
+      </Typography>
         <Grid container spacing={1}>
-          <Grid size={{ xs: 12, md: 4 }}>
-            {/* Contact Information */}
-            <Box
-              sx={{
-                color: "white",
-                p:3,
-                width: "100%",
-              }}>
-              <Typography variant="h6" fontWeight="bold" mb={2}>
-                Nos Contacts
-              </Typography>
-              <Typography variant="body2" mb={3}>
-                Nous facilitons votre monde et nous construisons une autorité élevée.
-              </Typography>
-              <Typography variant="body2" mb={2}>
-                📞 +2211770178668
-              </Typography>
-              <Typography variant="body2" mb={2}>
-                📞 +221876330686
-              </Typography>
-              <Typography variant="body2" mb={2}>
-                📧 support@nfc.com
-              </Typography>
-              <Typography variant="body2">
-                📍 Dakar, Sénégal
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid size={{ xs: 12, md: 8 }}>
+         
+          <Grid size={{ xs: 12, md: 12 }}>
             {/* Contact Form */}
             <Box sx={{ p:2, flexGrow: 1 }}>
               <Formik
@@ -138,11 +118,22 @@ const ContactSection = () => {
                         color="primary"
                         component={motion.button}
                         whileHover={{ scale: 1.05 }}
-                        sx={{ backgroundColor: "#00a3a3", textTransform: 'none', fontWeight: 'bold' }}
+                        sx={{
+                          background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
+                          color: "text.primary",
+                          fontWeight: "bold",
+                          padding: { xs: "4px 8px", md: "4px 8px", sm: "4px 8px" },
+                          borderRadius: "8px",
+                          textTransform: "none",
+                          fontSize:{xs:'12px',md:'16px',sm:'16px'},
+                          "&:hover": {
+                            background: "linear-gradient(to left, #FF5722, #FFD700)",
+                          },
+                        }}
                       >
                         Envoyer le Message
                       </Button>
-                    </Box>
+                    </Box> 
                   </Form>
                 )}
               </Formik>

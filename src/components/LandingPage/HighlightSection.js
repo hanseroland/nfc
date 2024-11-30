@@ -12,7 +12,7 @@ const HighlightSection = () => {
       opacity: 1,
       y: 0, // Se déplace vers le haut
       transition: {
-        duration: 0.8,
+        duration: 1,
         ease: "easeOut",
       },
     },
@@ -112,7 +112,7 @@ const HighlightSection = () => {
         </Grid>
 
         {/* Image mobile */}
-        <Grid size={{xs:12,md:6}} sx={{ position: "relative" }}>
+    <Grid size={{xs:12,md:6}} sx={{ position: "relative" }}>
       
       {/* Boîte grise */}
       <Box
@@ -120,28 +120,28 @@ const HighlightSection = () => {
         component={motion.div}
         initial={{ backgroundColor: "rgb(0, 255, 0)", opacity: 0 }}
         whileInView={{ backgroundColor: "#FF5722", opacity: 1 }}
+        transition={{duration: 1.8, ease: "easeOut"}}
         sx={{
           position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           backgroundColor: "rgb(69,69,82)", // Couleur grise
-          borderRadius: "100px",
+          borderRadius: {xs:'50px',md:'100px'},
           padding: "50px",
+          marginTop:{xs:'80px',md:'0px'},
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-          height: {xs:"300px",md:"450px"}, // Hauteur de la boîte grise
+          height: {xs:"200px",md:"450px"}, // Hauteur de la boîte grise
         }}
       >
       </Box>
       {/* Image au-dessus de la boîte */}
       <Box
         component={motion.img}
-       
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }} // Animation uniquement au premier scroll
         variants={fadeUpVariant}
-      
         src={`${process.env.PUBLIC_URL}/images/oumardiop.png`} // Remplacez par le chemin réel de votre image
         alt="Phone Mockup"
         sx={{

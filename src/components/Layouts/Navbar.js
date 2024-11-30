@@ -13,10 +13,14 @@ import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom"; // Importer useNavigate pour la redirection
+
 
 const Navbar = ({ mode, toggleTheme }) => {
+
+  const navigate = useNavigate(); // Initialiser useNavigate
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const pages = ["Accueil", "Fonctionnalité", "Avantages", "Offres", "Contacts"];
+  const pages = ["Accueil", "Fonctionnalité", "Avantages", "Offres", "Contact"];
 
   // Gestion de l'ouverture/fermeture du menu mobile
   const handleOpenNavMenu = (event) => {
@@ -25,6 +29,10 @@ const Navbar = ({ mode, toggleTheme }) => {
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
+  };
+
+  const handleCreateCardClick = () => {
+    navigate("/connexion"); // Redirige vers la page de connexion
   };
 
   return (
@@ -56,7 +64,7 @@ const Navbar = ({ mode, toggleTheme }) => {
             fontSize:'20px'
           }}
         >
-          Dakar<span style={{ color: "secondary.main" }}>Identity</span>
+          Black<span style={{ color: "secondary.main" }}>Identity</span>
         </Link>
 
         {/* Menu Mobile */}
@@ -133,15 +141,17 @@ const Navbar = ({ mode, toggleTheme }) => {
           <Button
             sx={{
               background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
-              color: "#fff",
+              color: "text.primary",
               fontWeight: "bold",
-              padding: { xs: "4px 8px", md: "8px 16px", sm: "8px 16px" },
+              padding: { xs: "4px 8px", md: "4px 8px", sm: "4px 8px" },
               borderRadius: "8px",
               textTransform: "none",
+              fontSize:{xs:'12px',md:'16px',sm:'16px'},
               "&:hover": {
                 background: "linear-gradient(to left, #FF5722, #FFD700)",
               },
             }}
+            onClick={handleCreateCardClick}
           >
             Créez votre carte
           </Button>

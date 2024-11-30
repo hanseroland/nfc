@@ -12,6 +12,11 @@ import Navbar from './components/Layouts/Navbar';
 // import react slick
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import SignUpPage from './components/connectionPages/signup/SignupPage';
+import MainLayout from './components/Layouts/MainLayout';
+import SimpleLayout from './components/Layouts/SimpleLayout';
+import SigninPage from './components/connectionPages/signin/SigninPage';
+import NotFoundPage from './components/ErrorPage/NotFoundPage';
 
 
 function App() {
@@ -30,12 +35,20 @@ function App() {
       <CssBaseline /> 
       <Router>
         {/*<Header onToggleTheme={() => setDarkMode(!darkMode)} />*/}
-         <Navbar  mode={mode} toggleTheme={toggleTheme}  />
+        
         <Routes>
-          <Route path="/" element={<LandingPage mode={mode} />} />
-          <Route path="/contact-detail/:id" element={<ContactDetail />} />
+          <Route element={<MainLayout  mode={mode} toggleTheme={toggleTheme} />} >
+              <Route index  element={<LandingPage  mode={mode}  />} />
+          </Route>
+          <Route element={<SimpleLayout/>}>
+               <Route path="/contact-detail" element={<ContactDetail  mode={mode} toggleTheme={toggleTheme} />} />
+               <Route path="/inscription" element={<SignUpPage mode={mode} toggleTheme={toggleTheme}  />} />
+               <Route path="/connexion" element={<SigninPage mode={mode} toggleTheme={toggleTheme}  />} />
+               <Route path='*'  element={<NotFoundPage/>} />
+          </Route>
+         
         </Routes>
-        <Footer />
+       
       </Router>
     </ThemeProvider>
   );

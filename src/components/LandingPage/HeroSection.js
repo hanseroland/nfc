@@ -18,7 +18,7 @@ const HeroSection = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "20px",
+        padding: "A0px",
       }}
     >
       {/* Titre Principal */}
@@ -32,7 +32,7 @@ const HeroSection = () => {
           fontSize:{xs:'30px',md:'40px'}
         }}
       >
-        DakarIdentity la carte de visite numérique sans contact
+        BlackIdentity la carte de visite numérique sans contact
       </Typography>
 
       {/* Section des Features */}

@@ -6,6 +6,7 @@ import AvantagesSection from './AvantagesSection';
 import PossibilitiesSection from './PossibilitiesSection';
 import WhyChooseUs from './WhyChooseUs';
 import PricingOffers from './PricingOffers';
+import ContactSection from './ContactSection';
 
 
 const LandingPage = ({mode}) => {
@@ -18,10 +19,11 @@ const LandingPage = ({mode}) => {
       <PossibilitiesSection mode={mode}/>
       <WhyChooseUs mode={mode}/>
       <PricingOffers  mode={mode}/>
+      <ContactSection mode={mode}/>
      {/* <FeaturesSection />
       <BenefitsSection />
       <Testimonials />
-      <ContactSection />*/}
+      */}
     </>
   );
 };
