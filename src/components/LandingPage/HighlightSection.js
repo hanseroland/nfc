@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid2';
 import { motion } from "framer-motion";
 
 
-const HighlightSection = () => {
+const HighlightSection = ({mode}) => {
 
   const fadeUpVariant = {
     hidden: { opacity: 0, y: 100 }, // Commence en bas, invisible
@@ -26,7 +26,7 @@ const HighlightSection = () => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "background.default", // Adapté au thème
+        backgroundColor: mode === "light" ? "#000" : "#D9D9D9", // Adapté au thème 
         padding: "40px",
         position: "relative",
         minHeight: "100vh",
@@ -60,7 +60,7 @@ const HighlightSection = () => {
               variant="h3"
               sx={{
                 fontWeight: "bold",
-                color: "text.primary",
+                color: mode === "light" ? "#fff" : "#000",
                 marginBottom: "20px",
                 fontSize:{md:'45px',xs:'35px'}
               }}
@@ -100,7 +100,7 @@ const HighlightSection = () => {
                 <Typography
                   variant="body2"
                   sx={{
-                    color: "text.secondary",
+                    color: mode === "light" ? "#fff" : "#000",
                     textAlign: "center",
                   }}
                 >
@@ -126,12 +126,13 @@ const HighlightSection = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          backgroundImage: "linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%)",
           backgroundColor: "rgb(69,69,82)", // Couleur grise
           borderRadius: {xs:'50px',md:'100px'},
           padding: "50px",
           marginTop:{xs:'80px',md:'0px'},
           boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-          height: {xs:"200px",md:"450px"}, // Hauteur de la boîte grise
+          height: {xs:"200px",md:"400px"}, // Hauteur de la boîte grise
         }}
       >
       </Box>
@@ -142,16 +143,16 @@ const HighlightSection = () => {
         whileInView="visible"
         viewport={{ once: true }} // Animation uniquement au premier scroll
         variants={fadeUpVariant}
-        src={`${process.env.PUBLIC_URL}/images/oumardiop.png`} // Remplacez par le chemin réel de votre image
+        src={`${process.env.PUBLIC_URL}/images/Lock Screen - iPhone.png`} // Remplacez par le chemin réel de votre image
         alt="Phone Mockup"
         sx={{
           position: "absolute", // Position absolue pour être en dehors de la boîte
           top: {xs:'10px',md:'-100px'}, // Dépassement au-dessus de la boîte
-          left: "20%", // Centrage horizontal
-          transform: "translateX(-50%)", // Ajustement pour centrer
-          width:{xs:'200px',md:'400px'},
+          left: "30%", // Centrage horizontal
+          transform: "translateX(50%)", // Ajustement pour centrer
+          width:{xs:'140px',md:'250px'},
           //width: "120%", // Taille plus grande que la boîte
-          maxWidth: "400px", // Taille maximale de l'image
+          maxWidth: "250px", // Taille maximale de l'image
           height: "auto", // Maintient les proportions de l'image
           
         }}
