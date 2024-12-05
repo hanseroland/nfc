@@ -20,7 +20,7 @@ const OffreCard = ({ id, title, description, price }) => {
                     fontWeight: "bold",
                     display: "flex",
                     alignItems: "center",
-                     textAlign:"center"
+            
                 }}
             >
                 <Box
@@ -52,21 +52,23 @@ const OffreCard = ({ id, title, description, price }) => {
             </Typography>
 
             {/* Description sous forme de liste */}
-            <List>
+            <ul>
                 {description.map((item, index) => (
-                    <ListItem
+                    <li
                         key={index}
-                        sx={{
+                        style={{
                             fontSize: "14px",
                             color: "white", // Texte des éléments toujours blanc
                             paddingLeft: 0,
+                            textAlign:'left'
+                            
                             
                         }}
                     >
                         {item}
-                    </ListItem>
+                    </li>
                 ))}
-            </List>
+            </ul>
 
            
 
