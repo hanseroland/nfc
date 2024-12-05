@@ -6,10 +6,49 @@ import OffreCard from "../Cards/OffreCard";
 
 
 const offers = [
-  { id: 1, title: "Formule basic", description: "A realm where advanced technology meets dystopian reality. Our website is your gateway." },
-  { id: 2, title: "Formule particulier", description: "A realm where advanced technology meets dystopian reality. Our website is your gateway." },
-  { id: 3, title: "Formule pro", description: "A realm where advanced technology meets dystopian reality. Our website is your gateway." },
-  { id: 4, title: "Formule entreprise", description: "A realm where advanced technology meets dystopian reality. Our website is your gateway." },
+  {
+    id: 1,
+    title: "Formule Basic",
+    description: [
+      "Personnalisation de la carte.",
+      "Intégration de vos coordonnées personnelles.",
+      "Intégration de 2 liens (site internet et réseaux sociaux).",
+      "Bouton pour enregistrer le contact en un clic.",
+      "Espace compte pour gérer vos données.",
+      "Paiement unique, sans abonnement.",
+      "Compatible avec tous les smartphones, tablettes et ordinateurs.",
+    ],
+    price: "25 000 Fcfa",
+  },
+  {
+    id: 2,
+    title: "Formule Pro",
+    description: [
+      "Personnalisation de la carte.",
+      "Intégration de vos coordonnées personnelles.",
+      "Intégration de 6 liens (site internet et réseaux sociaux).",
+      "Bouton pour enregistrer le contact en un clic.",
+      "Espace compte pour gérer vos données.",
+      "Paiement unique, sans abonnement.",
+      "Compatible avec tous les smartphones, tablettes et ordinateurs.",
+      "Ajout d’un listing de services.",
+      "Accès aux statistiques (nombre de vues, enregistrements).",
+    ],
+    price: "30 000 Fcfa",
+  },
+  {
+    id: 3,
+    title: "Pack Entreprise",
+    description: [
+      "Accès total.",
+      "Gestion de plusieurs cartes.",
+      "Outils statistiques détaillés.",
+      "Sauvegarde des données.",
+      "Accompagnement personnalisé.",
+      "Gestion des profils collaborateurs.",
+    ],
+    price: "Sur devis",
+  },
 ];
 
 const PricingOffers = ({mode}) => {
@@ -29,12 +68,12 @@ const PricingOffers = ({mode}) => {
         }}
     >
       <Typography variant="h2" sx={{ marginBottom: "2rem", fontWeight: "bold", fontSize:{md:'45px',xs:'35px'} }}>
-        Offres
+        Nos offres
       </Typography>
 
-      <Box sx={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
+     {/* <Box sx={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
         <HeroButton title="Particulier"/>
-      </Box>
+      </Box>*/}
 
       <Grid 
         container 
@@ -54,6 +93,7 @@ const PricingOffers = ({mode}) => {
                  id={offer.id}
                  title={offer.title}
                  description={offer.description}
+                 price={offer.price}
                  mode={mode}
                 />
           </Grid>

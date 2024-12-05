@@ -46,11 +46,11 @@ const DurabilityCard = ({mode}) => {
           height: "60px",
           marginRight: "20px",
           backgroundColor: mode === "light" ? "#fff" : "#000", // Fond central pour masquer la bordure
-          borderImage:"linear-gradient(to right, #FF5722, #FFD700)",
+          borderImage:"linear-gradient(to right, #1388d5, #80b1d0)",
           borderImageSlice: "1", 
         }}
       >
-        <BuildCircleIcon sx={{ color: "#FF5722", fontSize: "40px" }} />
+        <BuildCircleIcon sx={{ color: "primary.main", fontSize: "40px" }} />
       </Box>
 
       {/* Texte à côté de l'icône */}

@@ -5,18 +5,19 @@ const getDesignTokens = (mode) => ({
     mode,
     ...(mode === "light"
       ? {
-          primary: { main: "#FF5722" },
-          secondary: { main: "#FFD700" },
+          primary: { main: "#1388d5" },
+          secondary: { main: "#80b1d0" },
           background: { default: "#ffffff", paper: "#f5f5f5" },
           text: { primary: "#000", secondary: "#444" },
-          gradient: "linear-gradient(to right, #FF5722, #FFD700)", // Gradient Light
+          gradient: "linear-gradient(208deg, #1388d5 0%, #80b1d0 50%)", // Gradient Light
         }
+        
       : {
-          primary: { main: "#FF5722" },
-          secondary: { main: "#FFD700" },
+          primary: { main: "#1388d5" },
+          secondary: { main: "#80b1d0" },
           background: { default: "#000", paper: "#121212" },
           text: { primary: "#fff", secondary: "#aaa" },
-          gradient: "linear-gradient(to right, #FF5722, #FFD700)", // Gradient Dark
+          gradient: "linear-gradient(208deg, #1388d5 0%, #80b1d0 50%)", // Gradient Dark
         }),
   },
   typography: {

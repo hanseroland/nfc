@@ -19,7 +19,7 @@ const Footer = () => {
         {/* Section 1 - Logo and Tagline */}
         <Grid size={{ xs: 6, sm: 6 }} >
           <Typography variant="h6" sx={{ fontWeight: "bold" }}>
-            Blackidentity
+            Identity
           </Typography>
           <Typography
             variant="body2"
@@ -31,7 +31,7 @@ const Footer = () => {
             Faites un premier{" "}
             <Typography
               component="span"
-              sx={{ color: "orange", fontWeight: "bold" }}
+              sx={{ color: "#1388d5", fontWeight: "bold" }}
             >
               contact
             </Typography>{" "}

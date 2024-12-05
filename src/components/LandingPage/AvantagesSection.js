@@ -20,9 +20,9 @@ const AvantagesSection = ({mode}) => {
   };
 
   const avantages = [
-    { label: "Partage Sans Contact", color: "#FFD700" },
-    { label: "Design Personnalisé", color: "#FF5722" },
-    { label: "Sécurisée", color: "#FFD700" },
+    { label: "Partage Sans Contact", color: "primary.main" },
+    { label: "Design Personnalisé", color: "secondary.main" },
+    { label: "Sécurisée", color: "primary.main" },
   ];
 
   return (
@@ -31,7 +31,7 @@ const AvantagesSection = ({mode}) => {
       id="avantages"
       initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }} // Animation uniquement au premier scroll
+        viewport={{ once: false }} // Animation uniquement au premier scroll
         variants={fadeUpVariant}
       sx={{
         display: "flex",
@@ -96,10 +96,10 @@ const AvantagesSection = ({mode}) => {
         <Grid size={{xs:12,md:4}}>
           <Box
             sx={{
-              border: "1px solid #FFD700", // Bordure dorée
+              border: "1px solid #1388d5", // Bordure dorée
               borderRadius: "12px",
               padding: "20px",
-              borderImage:"linear-gradient(to right, #FF5722, #FFD700)",
+              //borderImage:"linear-gradient(208deg, #1388d5 0%, #80b1d0 50%)",
               borderImageSlice: "1", 
             }}
           >

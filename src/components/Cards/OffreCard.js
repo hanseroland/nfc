@@ -1,74 +1,91 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, List, ListItem, Button } from "@mui/material";
 
-const OffreCard = ({ id, title, description, mode }) => {
+const OffreCard = ({ id, title, description, price }) => {
     return (
         <Box
             sx={{
-                backgroundColor: "black",
-                color: "white",
+                backgroundColor: "black", // Fond noir
+                color: "white", // Texte blanc
                 padding: "20px",
                 borderRadius: "10px",
                 width: "100%",
                 position: "relative",
-                fontFamily: "'Roboto', sans-serif",
+                border: "1px solid #1388d5", // Bordure bleue
             }}
         >
-            {/* Icon + Number */}
+            {/* Title */}
             <Typography
                 sx={{
                     fontWeight: "bold",
-                    fontSize: "24px",
                     display: "flex",
                     alignItems: "center",
+                     textAlign:"center"
                 }}
             >
-                <Typography
-                    variant="h4"
-                    sx={{
-                        fontWeight: "bold",
-                        marginBottom: "1rem",
-                        color: "#FF6B00",
-                        display: "flex",
-                        alignItems: "center",
-                    }}
-                >
-                    0{id}
-                </Typography>
-
                 <Box
                     component="span"
                     sx={{
-                        fontSize: "18px",
+                        fontSize: "30px",
                         fontWeight: "bold",
                         marginLeft: "10px",
+                        color: "#1388d5", // Couleur du titre
+                         textAlign:"center"
                     }}
                 >
                     {title}
                 </Box>
+                
+          
             </Typography>
-
-            {/* Description */}
+             {/* Price */}
             <Typography
                 sx={{
-                    fontSize: "14px",
+                    fontSize: "18px",
+                    fontWeight: "bold",
+                    color: "#fff", // Couleur dorée pour le prix
                     marginTop: "10px",
-                    color: "rgba(255, 255, 255, 0.8)",
+                    textAlign:"center"
                 }}
             >
-                {description}
+                {price}
             </Typography>
 
-            {/* Underline */}
+            {/* Description sous forme de liste */}
+            <List>
+                {description.map((item, index) => (
+                    <ListItem
+                        key={index}
+                        sx={{
+                            fontSize: "14px",
+                            color: "white", // Texte des éléments toujours blanc
+                            paddingLeft: 0,
+                            
+                        }}
+                    >
+                        {item}
+                    </ListItem>
+                ))}
+            </List>
 
-            <Box
+           
+
+            {/* Button Commander */}
+            <Button
+                variant="contained"
                 sx={{
-                    marginTop: "10px",
-                    height: "1px",
-                    background: "linear-gradient(90deg, #FF6B00, #FFD700)",
-                    width: "100%",
+                    backgroundColor: "#1388d5",
+                    color: "white",
+                    fontWeight: "bold",
+                    marginTop: "15px",
+                    textTransform:'none',
+                    ":hover": {
+                        backgroundColor: "#0f6fb0", // Couleur de survol
+                    },
                 }}
-            />
+            >
+                Commander
+            </Button>
         </Box>
     );
 };

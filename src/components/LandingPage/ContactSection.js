@@ -119,7 +119,7 @@ const ContactSection = () => {
                         component={motion.button}
                         whileHover={{ scale: 1.05 }}
                         sx={{
-                          background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
+                          background: "linear-gradient(to right, #1388d5, #80b1d0)", // Dégradé
                           color: "text.primary",
                           fontWeight: "bold",
                           padding: { xs: "4px 8px", md: "4px 8px", sm: "4px 8px" },
@@ -127,7 +127,7 @@ const ContactSection = () => {
                           textTransform: "none",
                           fontSize:{xs:'12px',md:'16px',sm:'16px'},
                           "&:hover": {
-                            background: "linear-gradient(to left, #FF5722, #FFD700)",
+                            background: "linear-gradient(to left,  #1388d5, #80b1d0)",
                           },
                         }}
                       >

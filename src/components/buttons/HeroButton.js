@@ -27,7 +27,7 @@ const HeroButton = ({title}) => {
       <Typography
         variant="body1"
         sx={{
-          color: "#FF6B00", // Couleur orange du texte
+          color: "primary.main", // Couleur orange du texte
           fontWeight: "bold",
           zIndex: 1,
           textAlign:'center',
@@ -42,7 +42,7 @@ const HeroButton = ({title}) => {
         sx={{
           width: "40px",
           height: "100%",
-          backgroundColor: "#FF6B00", // Couleur orange
+          backgroundColor: "primary.main", // Couleur orange
           position: "absolute",
           right: 0,
           top: 0,

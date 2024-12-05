@@ -58,13 +58,13 @@ const Navbar = ({ mode, toggleTheme }) => {
           duration={500}
           style={{
             textDecoration: "none",
-            color: "#FF5722",
+            color: mode === "light" ? "#1388d5" : "#1388d5",
             cursor: "pointer",
             fontWeight: "bold",
             fontSize:'20px'
           }}
         >
-          Black<span style={{ color: "secondary.main" }}>Identity</span>
+          <span>Identity</span>
         </Link>
 
         {/* Menu Mobile */}
@@ -140,7 +140,7 @@ const Navbar = ({ mode, toggleTheme }) => {
           {/* Bouton principal */}
           <Button
             sx={{
-              background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
+              background: "linear-gradient(to right, #1388d5, #80b1d0)", // Dégradé
               color: "text.primary",
               fontWeight: "bold",
               padding: { xs: "4px 8px", md: "4px 8px", sm: "4px 8px" },
@@ -148,7 +148,7 @@ const Navbar = ({ mode, toggleTheme }) => {
               textTransform: "none",
               fontSize:{xs:'12px',md:'16px',sm:'16px'},
               "&:hover": {
-                background: "linear-gradient(to left, #FF5722, #FFD700)",
+                background: "linear-gradient(to left,#1388d5, #80b1d0)",
               },
             }}
             onClick={handleCreateCardClick}

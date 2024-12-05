@@ -42,9 +42,9 @@ const WhyChooseUs = ({mode}) => {
         <Box
           component={motion.img}
           initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }} // Animation uniquement au premier scroll
-        variants={fadeUpVariant}
+          whileInView="visible"
+          viewport={{ once: false }} // Animation uniquement au premier scroll
+          variants={fadeUpVariant}
           src={`${process.env.PUBLIC_URL}/images/pexels-tubarones-3754438.jpg`} // Remplacez par le chemin de l'image
           alt="Personne souriante"
           sx={{
@@ -87,12 +87,12 @@ const WhyChooseUs = ({mode}) => {
             component="span"
             sx={{
               fontSize:"30px",  
-              color: "#FF6B00", 
+              color: "primary.main", 
               fontWeight: "bold",
               textAlign:{md:'left',xs:'center'}
             }}
           >
-            Blackidentity
+            Identity
           </Typography>{" "}
            ?
         </Typography>
@@ -119,14 +119,14 @@ const WhyChooseUs = ({mode}) => {
         <Button
           variant="contained"
           sx={{
-            background: "linear-gradient(to right, #FF5722, #FFD700)", // Dégradé
+            background: "linear-gradient(to right, #1388d5, #80b1d0)", // Dégradé
             color: "#fff",
             fontWeight: "bold",
             padding: "8px 16px",
             borderRadius: "8px",
             textTransform: "none",
             "&:hover": {
-              background: "linear-gradient(to left, #FF5722, #FFD700)",
+              background: "linear-gradient(to left, #1388d5, #80b1d0)",
             },
           }}
         >

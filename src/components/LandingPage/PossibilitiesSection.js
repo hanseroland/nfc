@@ -12,18 +12,18 @@ const PossibilitiesSection = ({mode}) => {
       title: "Durabilité",
       description:
         "Carte de visite NFC fabriquée avec des matériaux de haute qualité et recyclables.",
-      icon: <BuildCircleIcon sx={{ color: "#FF5722", fontSize: 40 }} />,
+      icon: <BuildCircleIcon sx={{ color: "primary.main", fontSize: 40 }} />,
     },
     {
       title: "Personnalisation",
       description:
         "Personnalisez vos cartes NFC avec des designs, couleurs et informations spécifiques.",
-      icon: <DesignServicesIcon sx={{ color: "#FFD700", fontSize: 40 }} />,
+      icon: <DesignServicesIcon sx={{ color: "primary.main", fontSize: 40 }} />,
     },
     {
       title: "Prix attractifs",
       description: "Prix accessible pour tous.",
-      icon: <AttachMoneyIcon sx={{ color: "#FF5722", fontSize: 40 }} />,
+      icon: <AttachMoneyIcon sx={{ color: "primary.main", fontSize: 40 }} />,
     },
   ];
 
@@ -51,7 +51,7 @@ const PossibilitiesSection = ({mode}) => {
         }}
       >
         Une{" "}
-        <span style={{ color: "#FF5722" }}>carte,</span> 
+        <span style={{ color: "#1388d5" }}>carte,</span> 
       </Typography>
       <Typography
         variant="h3"

@@ -66,7 +66,7 @@ const HighlightSection = ({mode}) => {
               }}
             >
               Faites un premier{" "}
-              <span style={{ color: "#FF5722" }}>contact</span> qui laisse une
+              <span style={{ color: "#1388d5" }}>contact</span> qui laisse une
               impression générale
             </Typography>
           </Box>
@@ -118,15 +118,15 @@ const HighlightSection = ({mode}) => {
       <Box
         id="fond"
         component={motion.div}
-        initial={{ backgroundColor: "rgb(0, 255, 0)", opacity: 0 }}
-        whileInView={{ backgroundColor: "#FF5722", opacity: 1 }}
+        initial={{ backgroundColor: "#fff", opacity: 0 }}
+        whileInView={{ backgroundColor: "#1388d5", opacity: 1 }}
         transition={{duration: 1.8, ease: "easeOut"}}
         sx={{
           position: "relative",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          backgroundImage: "linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%)",
+          backgroundImage: "linear-gradient(to right, #1388d5, #80b1d0)",
           backgroundColor: "rgb(69,69,82)", // Couleur grise
           borderRadius: {xs:'50px',md:'100px'},
           padding: "50px",
@@ -141,18 +141,18 @@ const HighlightSection = ({mode}) => {
         component={motion.img}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }} // Animation uniquement au premier scroll
+        viewport={{ once: false }} // Animation uniquement au premier scroll
         variants={fadeUpVariant}
-        src={`${process.env.PUBLIC_URL}/images/Lock Screen - iPhone.png`} // Remplacez par le chemin réel de votre image
+        src={`${process.env.PUBLIC_URL}/images/oumardiop.png`} // Remplacez par le chemin réel de votre image
         alt="Phone Mockup"
         sx={{
           position: "absolute", // Position absolue pour être en dehors de la boîte
           top: {xs:'10px',md:'-100px'}, // Dépassement au-dessus de la boîte
-          left: "30%", // Centrage horizontal
+          left: "25%", // Centrage horizontal
           transform: "translateX(50%)", // Ajustement pour centrer
-          width:{xs:'140px',md:'250px'},
+          width:{xs:'140px',md:'365px'},
           //width: "120%", // Taille plus grande que la boîte
-          maxWidth: "250px", // Taille maximale de l'image
+          maxWidth: "450px", // Taille maximale de l'image
           height: "auto", // Maintient les proportions de l'image
           
         }}
