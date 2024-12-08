@@ -129,7 +129,27 @@ const Navbar = ({ mode, toggleTheme }) => {
             </Link>
           ))}
         </Box>
-
+        {/**Numéro de téléphone */}
+        <Box
+          sx={{
+            overflow: "hidden", // Masque le contenu qui dépasse
+            width: "130px", // Largeur visible
+            whiteSpace: "nowrap", // Évite le retour à la ligne
+            position: "relative",
+          }}
+        >
+          <Box
+            component="span"
+            sx={{
+              display: "inline-block",
+              animation: "marquee 15s linear infinite", // Animation défilante
+              whiteSpace: "nowrap", // Empêche le retour à la ligne
+              color: mode === "light" ? "#000" : "primary.main",
+            }}
+          >
+            +221 6 12 34 56 78
+          </Box>
+        </Box>
         {/* Boutons */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           {/* Bouton pour changer de thème */}
@@ -157,6 +177,19 @@ const Navbar = ({ mode, toggleTheme }) => {
           </Button>
         </Box>
       </Toolbar>
+       {/* Définition de l'animation dans les styles globaux */}
+       <style>
+        {`
+          @keyframes marquee {
+            0% {
+              transform: translateX(100%);
+            }
+            100% {
+              transform: translateX(-100%);
+            }
+          }
+        `}
+      </style>
     </AppBar>
   );
 };

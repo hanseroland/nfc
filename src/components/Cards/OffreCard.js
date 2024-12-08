@@ -61,8 +61,6 @@ const OffreCard = ({ id, title, description, price }) => {
                             color: "white", // Texte des éléments toujours blanc
                             paddingLeft: 0,
                             textAlign:'left'
-                            
-                            
                         }}
                     >
                         {item}

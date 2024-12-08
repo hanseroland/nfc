@@ -19,8 +19,10 @@ const LandingPage = ({mode}) => {
       <PossibilitiesSection mode={mode}/>
       <WhyChooseUs mode={mode}/>
       <PricingOffers  mode={mode}/>
-      <ContactSection mode={mode}/>
-     {/* <FeaturesSection />
+      
+     {/* 
+     <ContactSection mode={mode}/>
+     <FeaturesSection />
       <BenefitsSection />
       <Testimonials />
       */}

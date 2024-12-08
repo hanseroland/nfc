@@ -1,7 +1,8 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import FeatureCard from "../Cards/FeaturedCard";
-import Grid from '@mui/material/Grid2';
+import { Link } from "react-scroll";
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
 
 const HeroSection = () => {
@@ -32,11 +33,40 @@ const HeroSection = () => {
           fontSize:{xs:'30px',md:'40px'}
         }}
       >
-        BlackIdentity la carte de visite numérique sans contact
+         Identity la carte de visite numérique sans contact
       </Typography>
+      <Box>
+          <Link
+          to="offres" // Section cible
+          smooth={true}
+          duration={500}
+          offset={-70}
+          >
+            <Button
+              variant="text"
+              color="primary"
+              endIcon={<NavigateNextIcon/>}
+              sx={{
+                backgroundColor: "primary.main", // Couleur de fond
+                color: "#fff", // Couleur du texte
+                fontWeight: "bold",
+                padding: "10px 20px",
+                borderRadius: "50px",
+                textTransform: "none",
+                fontSize: "16px",
+                "&:hover": {
+                  backgroundColor: "secondary.main", // Couleur au survol
+                },
+              }}
+              
+            >
+              Commencer maintenant
+            </Button>
+          </Link>
+      </Box>
 
       {/* Section des Features */}
-      <Grid
+     {/* <Grid
         container
         spacing={2}
         justifyContent="center"
@@ -68,7 +98,7 @@ const HeroSection = () => {
             reverse 
           />
         </Grid>
-      </Grid>
+      </Grid>*/}
     </Box>
   );
 };
