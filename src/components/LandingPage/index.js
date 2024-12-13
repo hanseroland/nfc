@@ -7,6 +7,7 @@ import PossibilitiesSection from './PossibilitiesSection';
 import WhyChooseUs from './WhyChooseUs';
 import PricingOffers from './PricingOffers';
 import ContactSection from './ContactSection';
+import FloatingButton from '../buttons/FloatingButton';
 
 
 const LandingPage = ({mode}) => {
@@ -19,6 +20,7 @@ const LandingPage = ({mode}) => {
       <PossibilitiesSection mode={mode}/>
       <WhyChooseUs mode={mode}/>
       <PricingOffers  mode={mode}/>
+      <FloatingButton/>
       
      {/* 
      <ContactSection mode={mode}/>

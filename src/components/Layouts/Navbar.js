@@ -111,7 +111,7 @@ const Navbar = ({ mode, toggleTheme }) => {
         </Box>
 
         {/* Menu Desktop */}
-        <Box sx={{ display: { xs: "none", md: "flex" }, gap: 4 }}>
+        <Box sx={{ display: { xs: "none", md: "flex",justifyContent:'center' }, gap: 4 }}>
           {pages.map((page) => (
             <Link
               key={page}
@@ -133,7 +133,7 @@ const Navbar = ({ mode, toggleTheme }) => {
         <Box
           sx={{
             overflow: "hidden", // Masque le contenu qui dépasse
-            width: "130px", // Largeur visible
+            width: "138px", // Largeur visible
             whiteSpace: "nowrap", // Évite le retour à la ligne
             position: "relative",
           }}
@@ -141,17 +141,15 @@ const Navbar = ({ mode, toggleTheme }) => {
           <Box
             component="span"
             sx={{
-              display: "inline-block",
-              animation: "marquee 15s linear infinite", // Animation défilante
-              whiteSpace: "nowrap", // Empêche le retour à la ligne
-              color: mode === "light" ? "#000" : "primary.main",
+              fontSize:{xs:'10px',md:'16px',sm:'16px'},
+              color: mode === "light" ? "#000" : "#fff",
             }}
           >
             +221 6 12 34 56 78
           </Box>
         </Box>
         {/* Boutons */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+        <Box sx={{ display: "flex", alignItems: "center",  }}>
           {/* Bouton pour changer de thème */}
           <IconButton onClick={toggleTheme} sx={{ color: "text.primary" }}>
             {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
@@ -166,7 +164,8 @@ const Navbar = ({ mode, toggleTheme }) => {
               padding: { xs: "4px 8px", md: "4px 8px", sm: "4px 8px" },
               borderRadius: "8px",
               textTransform: "none",
-              fontSize:{xs:'12px',md:'16px',sm:'16px'},
+              width:{xs:'100px',md:'150px',sm:'150px'},
+              fontSize:{xs:'10px',md:'16px',sm:'16px'},
               "&:hover": {
                 background: "linear-gradient(to left,#1388d5, #80b1d0)",
               },

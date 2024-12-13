@@ -73,7 +73,7 @@ const ContactDetail = ({ mode, toggleTheme }) => {
           width: '100%', 
           borderRadius: 2, 
           boxShadow: 3,
-          backgroundImage: "linear-gradient(to right, #1388d5, #80b1d0)",
+          backgroundImage: "linear-gradient(to right bottom, #e3e5eb, #b7c4ef, #8ea3f1, #6381f0, #2d5fec)",
 
         }}
         >
