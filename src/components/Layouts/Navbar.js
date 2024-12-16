@@ -149,7 +149,7 @@ const Navbar = ({ mode, toggleTheme }) => {
           </Box>
         </Box>
         {/* Boutons */}
-        <Box sx={{ display: "flex", alignItems: "center",  }}>
+         <Box sx={{ display: "flex", alignItems: "center",  }}>
           {/* Bouton pour changer de thème */}
           <IconButton onClick={toggleTheme} sx={{ color: "text.primary" }}>
             {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}

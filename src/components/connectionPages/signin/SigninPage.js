@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, TextField, Typography, Box, IconButton } from "@mui/material";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -7,6 +7,9 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
+import { useNavigate } from 'react-router-dom';
+import { LoginUser } from "../../../api/auth";
+import { GetCurrentUser } from "../../../api/users";
 
 // Schéma de validation pour la connexion
 const LoginSchema = Yup.object().shape({
@@ -15,9 +18,46 @@ const LoginSchema = Yup.object().shape({
 });
 
 const SigninPage = ({ mode, toggleTheme }) => {
-  const handleSubmit = (values) => {
-    console.log("Valeurs du formulaire : ", values);
-  };
+
+  const navigate = useNavigate();
+
+
+  const handleSignin = useCallback(async (values) => { 
+    try {
+      const response = await LoginUser(values);
+      if (response.success) {
+       
+          localStorage.setItem('token', response.token);
+          navigate('/admin');
+       
+      } else {
+        throw new Error(response.message);
+      }
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  }, [navigate]);
+
+
+  const getCurrentUser = useCallback(async () => {
+    try {
+      const response = await GetCurrentUser();
+      if (response.success) {
+        
+          navigate('/admin');
+        
+      }
+    } catch (error) {
+      console.error(error.message);
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      getCurrentUser();
+    }
+  }, [getCurrentUser]);
+ 
 
   return (
     <Box
@@ -50,7 +90,7 @@ const SigninPage = ({ mode, toggleTheme }) => {
           password: "",
         }}
         validationSchema={LoginSchema}
-        onSubmit={handleSubmit}
+        onSubmit={handleSignin}
       >
         {({ errors, touched, isSubmitting }) => (
           <Form>
@@ -99,7 +139,7 @@ const SigninPage = ({ mode, toggleTheme }) => {
             <Typography variant="body2" sx={{ mb: 1, mt: 2 }}>
               ou
             </Typography>
-            <Button
+              {/* <Button
               fullWidth
               variant="outlined"
               startIcon={<GoogleIcon />}
@@ -120,7 +160,7 @@ const SigninPage = ({ mode, toggleTheme }) => {
               <a href="/#/inscription" style={{ color: "blue", textDecoration: "none" }}>
                 Inscrivez-vous
               </a>
-            </Typography>
+            </Typography>*/}
           </Form>
         )}
       </Formik>

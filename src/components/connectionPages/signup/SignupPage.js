@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, Checkbox, TextField, Typography, Box, IconButton } from "@mui/material";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
@@ -7,6 +7,10 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
+import { RegisterUser } from "../../../api/auth";
+import { useNavigate } from 'react-router-dom';
+
+
 
 const SignupSchema = Yup.object().shape({
   fullName: Yup.string().required("Le nom est requis"),
@@ -21,9 +25,40 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SignupPage = ({mode,toggleTheme}) => {
-  const handleSubmit = (values) => {
-    console.log("Valeurs du formulaire : ", values);
-  };
+
+  const navigate = useNavigate();
+  const [message, setMessage] = useState('');
+
+
+
+  const handleRegister = useCallback(async (obj) => {
+    try {
+      if (obj.password === obj.confirmPassword) {
+        const response = await RegisterUser(obj);
+        if (response.success) {
+          setMessage(response.message);
+         
+          localStorage.setItem("token", response.token);
+          navigate('/');
+
+        } else {
+          console.log(response.message)
+        }
+      } else {
+        
+        console.log("Password doesn't match")
+      }
+    } catch (error) {
+
+      console.log(error.message)
+    }
+  }, [navigate]);
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      navigate('/');
+    }
+  }, [navigate]);
 
   return (
     <Box
@@ -62,7 +97,7 @@ const SignupPage = ({mode,toggleTheme}) => {
           updates: false,
         }}
         validationSchema={SignupSchema}
-        onSubmit={handleSubmit}
+        onSubmit={handleRegister}
       >
         {({ errors, touched, isSubmitting }) => (
           <Form>
